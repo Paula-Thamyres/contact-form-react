@@ -1,0 +1,6 @@
+export const MINIMUM_FULL_NAME_LENGTH = 3;
+export const MINIMUM_FULL_NAME_WORD_COUNT = 2;
+export const MAXIMUM_FULL_NAME_LENGTH = 100;
+export const MAXIMUM_EMAIL_LENGTH = 254;
+export const MINIMUM_MESSAGE_LENGTH = 10;
+export const MAXIMUM_MESSAGE_LENGTH = 1000;

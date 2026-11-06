@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  --page-base: #faf5ff;
+  --aurora-lilac: #e9d5ff;
+  --aurora-pink: #fbcfe8;
+  --aurora-violet: #ddd6fe;
+  --card-surface: rgb(255 255 255 / 0.62);
+  --card-border: rgb(255 255 255 / 0.85);
+  --card-shadow: 0 24px 60px rgb(139 92 246 / 0.2);
+  --ink-heading: #4c1d95;
+  --ink: #1f1a2e;
+  --ink-muted: #5b5270;
+  --ink-label: #2b2340;
+  --ink-hint: #6b6280;
+  --control-surface: rgb(255 255 255 / 0.85);
+  --control-border: #e2d4f8;
+  --control-placeholder: #9a90b0;
+  --danger: #b91c1c;
+  --danger-border: #dc2626;
+  --accent-start: #7c3aed;
+  --accent-end: #db2777;
+  --accent-text: #6d28d9;
+  --accent-soft: rgb(124 58 237 / 0.08);
+  --on-accent: #ffffff;
+  --focus-ring: #a855f7;
+  --toggle-surface: rgb(255 255 255 / 0.7);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --page-base: #150d24;
+  --aurora-lilac: rgb(168 85 247 / 0.32);
+  --aurora-pink: rgb(236 72 153 / 0.22);
+  --aurora-violet: rgb(99 102 241 / 0.26);
+  --card-surface: rgb(38 26 61 / 0.62);
+  --card-border: rgb(255 255 255 / 0.1);
+  --card-shadow: 0 24px 60px rgb(0 0 0 / 0.45);
+  --ink-heading: #f3e8ff;
+  --ink: #f6ecff;
+  --ink-muted: #bba9d9;
+  --ink-label: #dccbf4;
+  --ink-hint: #9e8bc0;
+  --control-surface: rgb(21 13 36 / 0.7);
+  --control-border: #4a3573;
+  --control-placeholder: #7d6a9e;
+  --danger: #fda4af;
+  --danger-border: #fb7185;
+  --accent-start: #c084fc;
+  --accent-end: #f472b6;
+  --accent-text: #d8b4fe;
+  --accent-soft: rgb(216 180 254 / 0.14);
+  --on-accent: #1a1129;
+  --focus-ring: #f0abfc;
+  --toggle-surface: rgb(38 26 61 / 0.7);
+}
+
+@theme inline {
+  --color-card-border: var(--card-border);
+  --color-ink-heading: var(--ink-heading);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-label: var(--ink-label);
+  --color-ink-hint: var(--ink-hint);
+  --color-control-surface: var(--control-surface);
+  --color-control-border: var(--control-border);
+  --color-control-placeholder: var(--control-placeholder);
+  --color-danger: var(--danger);
+  --color-danger-border: var(--danger-border);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-focus-ring: var(--focus-ring);
+  --color-toggle-surface: var(--toggle-surface);
+}
+
+@layer components {
+  .aurora-background {
+    background:
+      radial-gradient(circle at 15% 18%, var(--aurora-lilac) 0, transparent 45%),
+      radial-gradient(circle at 88% 12%, var(--aurora-pink) 0, transparent 42%),
+      radial-gradient(circle at 70% 92%, var(--aurora-violet) 0, transparent 48%),
+      var(--page-base);
+  }
+
+  .glass-card {
+    background: var(--card-surface);
+    border: 1px solid var(--card-border);
+    border-radius: 1.625rem;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .accent-button {
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    color: var(--on-accent);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-end) 35%, transparent);
+  }
+}
